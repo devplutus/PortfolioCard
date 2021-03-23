@@ -1,32 +1,43 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <MovingBackground />
+    <div class="container">
+      <Nav />
+      <ProfileCard />
     </div>
-    <router-view />
   </div>
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+import MovingBackground from "@/components/MovingBackground.vue";
+import Nav from "@/components/Nav.vue";
+import ProfileCard from "@/components/ProfileCard.vue";
+export default Vue.extend({
+  components: {
+    MovingBackground,
+    Nav,
+    ProfileCard,
+  },
+});
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css");
+body {
+  font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.container {
+  display: flex;
+  flex-direction: row;
 }
 </style>
