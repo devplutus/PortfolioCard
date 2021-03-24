@@ -6,16 +6,33 @@
         <Nav />
         <ProfileCard />
       </div>
-      <router-view ref="containerMain" class="container-main" />
+      <div
+        v-if="currentRoute !== 'Profile'"
+        ref="containerMain"
+        class="container-main"
+      >
+        <Resume ref="resume" v-if="currentRoute === 'Resume'" />
+        <Portfolio ref="portfolio" v-if="currentRoute === 'Portfolio'" />
+        <Contact ref="contact" v-if="currentRoute === 'Contact'" />
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Vue from "vue";
+import { mapState } from "vuex";
+// Sub Components
 import MovingBackground from "@/components/MovingBackground.vue";
 import Nav from "@/components/Nav.vue";
 import ProfileCard from "@/components/ProfileCard.vue";
+// Main Views
+import Resume from "@/views/Resume.vue";
+import Portfolio from "@/views/Portfolio.vue";
+import Contact from "@/views/Contact.vue";
+
 export default Vue.extend({
   data() {
     return {
@@ -26,6 +43,28 @@ export default Vue.extend({
     MovingBackground,
     Nav,
     ProfileCard,
+    Resume,
+    Portfolio,
+    Contact,
+  },
+  computed: {
+    ...mapState({
+      currentRoute: function (state: any) {
+        const current = state.route.current;
+        const prev = state.route.prev;
+        return current;
+      },
+    }),
+  },
+  methods: {
+    openMainConatiner(current: string, prev: string) {
+      const conatinerMain = this.$refs.containerMain as HTMLDivElement;
+      if (current === "Profile") {
+        conatinerMain.style.animation = "close-main-container 1s";
+      } else if (prev === "Profile") {
+        conatinerMain.style.animation = "open-main-container 1s";
+      }
+    },
   },
 });
 </script>
@@ -57,17 +96,32 @@ body {
 .container-main {
   z-index: 0;
   width: 800px;
-  border-radius: 10px;
-  padding: 5px;
-  background: white;
-  animation: bottomToTop 2s;
 }
 
 /* Animation */
+@keyframes open-main-conatiner {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 800px;
+  }
+}
+@keyframes close-main-container {
+  to {
+    width: 0px;
+  }
+}
 @keyframes bottomToTop {
   0% {
     width: 0px;
     opacity: 0;
+  }
+  50% {
+    width: 800px;
+    opacity: 0;
+  }
+  75% {
     transform: translateY(-100%);
   }
   100% {

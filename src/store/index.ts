@@ -7,6 +7,13 @@ export const MutaitonTypes = {
   SET_ROUTE: "SET_ROUTE",
 };
 
+export type StateType = {
+  route: {
+    prev: string;
+    current: string;
+  };
+};
+
 export default new Vuex.Store({
   state: {
     route: {
@@ -15,7 +22,7 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    [MutaitonTypes.SET_ROUTE](state, { next }) {
+    [MutaitonTypes.SET_ROUTE](state, next) {
       state.route.prev = state.route.current;
       state.route.current = next;
     },
