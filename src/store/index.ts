@@ -3,9 +3,23 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+export const MutaitonTypes = {
+  SET_ROUTE: "SET_ROUTE",
+};
+
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    route: {
+      prev: "",
+      current: "",
+    },
+  },
+  mutations: {
+    [MutaitonTypes.SET_ROUTE](state, { next }) {
+      state.route.prev = state.route.current;
+      state.route.current = next;
+    },
+  },
   actions: {},
   modules: {},
 });

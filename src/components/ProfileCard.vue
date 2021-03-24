@@ -126,11 +126,13 @@ export default Vue.extend({
 @import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css");
 
 .profile-card {
+  z-index: 10;
   height: 650px;
   width: 450px;
   background: white;
   border-radius: 5px;
   margin-left: 10px;
+  box-shadow: 0px 0px 14px 1px rgba(0, 0, 0, 0.55);
   span {
     font-family: Montserrat;
     display: block;

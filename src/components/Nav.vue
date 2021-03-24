@@ -1,19 +1,23 @@
 <template>
   <div>
     <div class="nav">
-      <router-link
+      <div
         class="nav-item"
         v-for="item in menuItems"
         :key="item.key"
-        :to="item.title.toLowerCase()"
+        @click="moveNavSelect(item.title)"
       >
         <i :class="`fas ${item.icon}`"></i>
         {{ item.title.toUpperCase() }}
-      </router-link>
+      </div>
       <!-- Current Position -->
       <div ref="navSelect" class="nav-select">
         <div ref="navSelectItems" class="nav-select-items">
-          <div class="nav-item" v-for="item in menuItems" :key="item.key">
+          <div
+            class="nav-item-select"
+            v-for="item in menuItems"
+            :key="item.key"
+          >
             <i :class="`fas ${item.icon}`"></i>
             <span>{{ item.title.toUpperCase() }}</span>
           </div>
@@ -25,6 +29,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { MutaitonTypes } from "../store/index";
 export default Vue.extend({
   data() {
     return {
@@ -70,12 +75,10 @@ export default Vue.extend({
       ],
     };
   },
-  watch: {
-    $route: "moveNavSelect",
-  },
   methods: {
-    moveNavSelect() {
-      const routeName: string = this.$route.name || "Profile";
+    moveNavSelect(routeName: string) {
+      this.$store.commit(MutaitonTypes.SET_ROUTE, routeName);
+
       const navSelect = this.$refs.navSelect as HTMLDivElement;
       const navSelectItems = this.$refs.navSelectItems as HTMLDivElement;
 
@@ -90,19 +93,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.test {
-  overflow: initial !important;
-  left: 110px !important;
-}
-.nav {
-  position: relative;
-  background-color: white;
-  border-radius: 5px;
-  color: inherit;
-  box-shadow: 2px 4px 15px 3px rgba(0, 0, 0, 0.42);
-}
-
-.nav-item {
+%nav-item {
   height: 65px;
   padding: 0 10px;
   display: flex;
@@ -111,11 +102,26 @@ export default Vue.extend({
   text-decoration: none;
   color: inherit;
   justify-content: center;
+  i {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
 }
-
-.nav-item i {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+.nav {
+  z-index: 11;
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  color: inherit;
+  box-shadow: 2px 4px 15px 3px rgba(0, 0, 0, 0.42);
+}
+.nav-item {
+  @extend %nav-item;
+  cursor: pointer;
+  &:hover {
+    background: rgb(148, 216, 186);
+    color: white;
+  }
 }
 
 .nav-select {
@@ -130,6 +136,10 @@ export default Vue.extend({
   color: white;
   transition: all 1s;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.42);
+}
+
+.nav-item-select {
+  @extend %nav-item;
 }
 
 .nav-select-items {
