@@ -98,7 +98,7 @@ export default Vue.extend({
   position: relative;
   background-color: white;
   border-radius: 5px;
-  color: black;
+  color: inherit;
   box-shadow: 2px 4px 15px 3px rgba(0, 0, 0, 0.42);
 }
 

@@ -8,6 +8,9 @@ const routes: Array<RouteConfig> = [
     path: "/",
     name: "Profile",
     component: () => import("../views/Profile.vue"),
+    meta: {
+      title: "Test",
+    },
   },
   {
     path: "/resume",

@@ -35,6 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  color: rgb(50, 50, 50);
 }
 .container {
   display: flex;
