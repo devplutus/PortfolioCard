@@ -118,8 +118,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    async beforeEnter() {
-      await this.delay(1000);
+    beforeEnter() {
       console.log(this.prevRoute, this.currentRoute, "Enter");
       if (![this.currentRoute, this.prevRoute].includes("Profile")) {
         const gap =
