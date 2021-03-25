@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+
 export default Vue.extend({
   data() {
     return {
@@ -115,8 +116,10 @@ export default Vue.extend({
     },
     isShowIcons(isShow: boolean) {
       const jobSpan = this.$refs.profileDevIcons as HTMLDivElement;
-      jobSpan.classList.add(isShow ? "show" : "hide");
-      jobSpan.classList.remove(isShow ? "hide" : "show");
+      if (jobSpan) {
+        jobSpan.classList.add(isShow ? "show" : "hide");
+        jobSpan.classList.remove(isShow ? "hide" : "show");
+      }
     },
   },
 });

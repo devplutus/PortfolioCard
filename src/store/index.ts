@@ -9,7 +9,6 @@ export const MutaitonTypes = {
 
 export type StateType = {
   route: {
-    prev: string;
     current: string;
   };
 };
@@ -17,8 +16,8 @@ export type StateType = {
 export default new Vuex.Store({
   state: {
     route: {
-      prev: "",
-      current: "",
+      prev: "Profile",
+      current: "Profile",
     },
   },
   mutations: {

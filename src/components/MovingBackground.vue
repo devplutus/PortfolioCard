@@ -49,7 +49,7 @@ export default Vue.extend({
 
       this.totalRect += 1;
 
-      background.appendChild(rect);
+      background && background.appendChild(rect);
     },
     setRectSizeAndPos(rect: HTMLDivElement) {
       const size = this.getRandomValue(this.RECT_MIN_SIZE, this.RECT_MAX_SIZE);
