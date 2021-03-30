@@ -98,16 +98,15 @@ export default Vue.extend({
 
       if (this.currentRoute !== "Profile") {
         const animationName = this.gap >= 0 ? "open-to-top" : "open-to-bottom";
-        currentDOM.style.animation = `${animationName} ${this.animationDelay}s ease-in-out`;
-        // currentDOM.style.animationDelay = `${this.animationDelay}s`;
         currentDOM.style.opacity = "0";
         await this.delay(this.animationDelay * 1000);
+        currentDOM.style.animation = `${animationName} ${this.animationDelay}s ease-in-out`;
         currentDOM.style.opacity = "1";
       }
       done();
     },
     async leave() {
-      await this.delay(this.animationDelay)
+      await this.delay(this.animationDelay);
       const prevDOM = document.getElementById(
         this.prevRoute.toLowerCase()
       ) as HTMLDivElement;

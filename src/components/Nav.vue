@@ -119,20 +119,20 @@ export default Vue.extend({
   @extend %nav-item;
   cursor: pointer;
   &:hover {
-    background: rgb(148, 216, 186);
+    background: $hover-color;
     color: white;
   }
 }
 
 .nav-select {
   position: absolute;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   top: 0;
   left: -1px;
   overflow: hidden;
   height: 65px;
   width: 100px;
-  background: rgb(76, 172, 131);
+  background: $main-color;
   color: white;
   transition: all 1s;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.42);

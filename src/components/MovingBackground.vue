@@ -92,7 +92,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style lang="scss">
 .background {
   z-index: -1;
   width: 100vw;
@@ -100,7 +100,7 @@ export default Vue.extend({
   left: 0;
   top: 0;
   position: fixed;
-  background-color: rgb(76, 172, 131);
+  background: linear-gradient(135deg, $main-color, rgb(107 241 184));
 }
 
 .background-rect {
