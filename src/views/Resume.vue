@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="resume">
     <!-- Resume -->
     <div class="content">
       <ContentTitle title="Resume" />
@@ -39,6 +39,7 @@
         </template>
         <template slot="right">
           <ContentSubTitle title="CODING" icon="code" />
+          <CodingForm ref="codingForm" />
         </template>
       </ContentBody>
       <ContentBody style="margin-top: 20px">
@@ -58,6 +59,7 @@ import ContentTitle from "@/components/ContentTitle.vue";
 import ContentBody from "@/components/ContentBody.vue";
 import ContentSubTitle from "@/components/ContentSubTitle.vue";
 import ResumeForm from "@/components/Resume/ResumeForm.vue";
+import CodingForm from "@/components/Resume/CodingForm.vue";
 import Vue from "vue";
 
 export default Vue.extend({
@@ -66,6 +68,7 @@ export default Vue.extend({
     ContentSubTitle,
     ContentBody,
     ResumeForm,
+    CodingForm,
   },
   data() {
     return {
@@ -121,6 +124,10 @@ export default Vue.extend({
         },
       ],
     };
+  },
+  mounted() {
+    const resume = this.$refs.resume as HTMLDivElement;
+    const codingForm = this.$refs.codingForm as HTMLDivElement;
   },
 });
 </script>
