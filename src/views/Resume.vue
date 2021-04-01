@@ -126,8 +126,21 @@ export default Vue.extend({
     };
   },
   mounted() {
-    const resume = this.$refs.resume as HTMLDivElement;
-    const codingForm = this.$refs.codingForm as HTMLDivElement;
+    const resume = this.$refs.resume as HTMLElement;
+    resume.addEventListener("scroll", this.checkVisible);
+  },
+  methods: {
+    checkVisible() {
+      const resume = this.$refs.resume as HTMLElement;
+      const codingForm = (this.$refs.codingForm as Vue).$el as HTMLElement;
+      const mainBottom = resume.getBoundingClientRect().bottom;
+      const subTop = codingForm.getBoundingClientRect().top;
+
+      if (subTop <= mainBottom) {
+        (this.$refs.codingForm as any).startAnimation();
+        resume.removeEventListener("scroll", this.checkVisible);
+      }
+    },
   },
 });
 </script>

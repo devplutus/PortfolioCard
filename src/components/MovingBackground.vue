@@ -9,19 +9,19 @@ export default Vue.extend({
     return {
       /* OPTION */
       // Unit : pixel
-      RECT_MIN_SIZE: 50,
-      RECT_MAX_SIZE: 200,
+      RECT_MIN_SIZE: 20,
+      RECT_MAX_SIZE: 40,
       // Unit : s
       RECT_MIN_ROTATE_TIME: 15,
       RECT_MAX_ROTATE_TIME: 25,
       // Unit : ms
-      RECT_MIN_MOVE_TIME: 20,
+      RECT_MIN_MOVE_TIME: 5,
       RECT_MAX_MOVE_TIME: 50,
-      RECT_ROUTIN_TIME: 1000,
+      RECT_ROUTIN_TIME: 100,
       // Unit : pixel
       RECT_MOVE_STEP: 1,
       // Unit : ea
-      RECT_MAX_TOTAL: 10,
+      RECT_MAX_TOTAL: 50,
       /* Variable */
       totalRect: 0,
     };
@@ -100,13 +100,13 @@ export default Vue.extend({
   left: 0;
   top: 0;
   position: fixed;
-  background: linear-gradient(135deg, $main-color, rgb(107 241 184));
+  background: linear-gradient(155deg, $main-color, #b0fbdb);
 }
 
 .background-rect {
   position: absolute;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .rect-rotate {
