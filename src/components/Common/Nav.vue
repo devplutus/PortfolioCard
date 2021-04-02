@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { MutaitonTypes } from "../store/index";
+import { MutaitonTypes } from "../../store/index";
 export default Vue.extend({
   data() {
     return {

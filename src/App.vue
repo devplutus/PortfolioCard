@@ -39,9 +39,9 @@
 import Vue from "vue";
 import { mapState } from "vuex";
 // Sub Components
-import MovingBackground from "@/components/MovingBackground.vue";
-import Nav from "@/components/Nav.vue";
-import ProfileCard from "@/components/ProfileCard.vue";
+import MovingBackground from "@/components/Common/MovingBackground.vue";
+import Nav from "@/components/Common/Nav.vue";
+import ProfileCard from "@/components/Common/ProfileCard.vue";
 // Main Views
 import Resume from "@/views/Resume.vue";
 import Portfolio from "@/views/Portfolio.vue";

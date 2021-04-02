@@ -34,18 +34,23 @@
     <div class="content">
       <ContentTitle title="My Skills" />
       <ContentBody>
+        <!-- LANGUAGE -->
         <template slot="left">
           <ContentSubTitle title="LANGUAGE" icon="js" prefix="fab" />
+          <LanguageForm ref="languageForm" />
         </template>
+        <!-- CODING -->
         <template slot="right">
           <ContentSubTitle title="CODING" icon="code" />
           <CodingForm ref="codingForm" />
         </template>
       </ContentBody>
       <ContentBody style="margin-top: 20px">
+        <!-- DEV TOOL -->
         <template slot="left">
           <ContentSubTitle title="DEV TOOL" icon="screwdriver" />
         </template>
+        <!-- KNOWLEDGE -->
         <template slot="right">
           <ContentSubTitle title="KNOWLEDGE" icon="lightbulb" prefix="far" />
         </template>
@@ -55,11 +60,14 @@
 </template>
 
 <script lang="ts">
-import ContentTitle from "@/components/ContentTitle.vue";
-import ContentBody from "@/components/ContentBody.vue";
-import ContentSubTitle from "@/components/ContentSubTitle.vue";
+import ContentTitle from "@/components/Common/ContentTitle.vue";
+import ContentBody from "@/components/Common/ContentBody.vue";
+import ContentSubTitle from "@/components/Common/ContentSubTitle.vue";
+
 import ResumeForm from "@/components/Resume/ResumeForm.vue";
 import CodingForm from "@/components/Resume/CodingForm.vue";
+import LanguageForm from "@/components/Resume/LanguageForm.vue";
+
 import Vue from "vue";
 
 export default Vue.extend({
@@ -69,6 +77,7 @@ export default Vue.extend({
     ContentBody,
     ResumeForm,
     CodingForm,
+    LanguageForm,
   },
   data() {
     return {
