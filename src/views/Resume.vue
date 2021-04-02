@@ -60,6 +60,8 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import ContentTitle from "@/components/Common/ContentTitle.vue";
 import ContentBody from "@/components/Common/ContentBody.vue";
 import ContentSubTitle from "@/components/Common/ContentSubTitle.vue";
@@ -146,8 +148,8 @@ export default Vue.extend({
       const subTop = codingForm.getBoundingClientRect().top;
 
       if (subTop <= mainBottom) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (this.$refs.codingForm as any).startAnimation();
+        (this.$refs.languageForm as any).startAnimation();
         resume.removeEventListener("scroll", this.checkVisible);
       }
     },

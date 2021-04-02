@@ -1,5 +1,5 @@
 <template>
-  <div ref="pieChartForm" class="pie-chart-form">
+  <div ref="pieChartForm" class="progress-circle-form">
     <ProgressCircle
       ref="progressCircles"
       v-for="info in pieChartInfos"
@@ -56,7 +56,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.pie-chart-form {
+.progress-circle-form {
   padding: 30px 30px 0 30px;
   display: flex;
   flex-wrap: wrap;

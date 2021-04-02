@@ -58,13 +58,10 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss">
-:root {
+<style lang="scss" scoped>
+.progress-circle {
   --progress-circle-size: 110px;
   --progress-circle-border: 15px;
-}
-
-.progress-circle {
   width: var(--progress-circle-size);
   height: var(--progress-circle-size);
   position: relative;
