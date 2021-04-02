@@ -146,6 +146,7 @@ export default Vue.extend({
       const subTop = codingForm.getBoundingClientRect().top;
 
       if (subTop <= mainBottom) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (this.$refs.codingForm as any).startAnimation();
         resume.removeEventListener("scroll", this.checkVisible);
       }

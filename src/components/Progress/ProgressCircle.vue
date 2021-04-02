@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pie-chart">
+    <div ref="progressCircle" class="progress-circle">
       <span class="percentage">0%</span>
     </div>
     <span class="title">{{ title }}</span>
@@ -20,15 +20,53 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
-    
-  }
+    thickness: {
+      type: Number,
+      required: true,
+    },
+  },
+  mounted() {
+    const progressCircle = this.$refs.progressCircle as HTMLDivElement;
+    progressCircle.style.setProperty(
+      "--progress-circle-size",
+      `${this.size}px`
+    );
+    progressCircle.style.setProperty(
+      "--progress-circle-border",
+      `${this.thickness}px`
+    );
+  },
+  methods: {
+    animate() {
+      const chart = this.$refs.progressCircle as HTMLDivElement;
+      const percentage = this.value;
+      const count = setInterval(() => {
+        // Count Up
+        const span = chart.getElementsByTagName("span")[0] as HTMLSpanElement;
+        const nextPercentage = parseInt(span.innerText.replace("%", "")) + 1;
+        span.innerText = `${nextPercentage}%`;
+
+        // Aniamtion
+        chart.style.background = `conic-gradient(#4cac83 ${nextPercentage}%, #eaeaea 0)`;
+
+        if (nextPercentage === percentage) {
+          clearInterval(count);
+        }
+      }, Math.floor(1000 / percentage));
+    },
+  },
 });
 </script>
 
 <style lang="scss">
-.pie-chart {
-  width: $pie-chart-size;
-  height: $pie-chart-size;
+:root {
+  --progress-circle-size: 110px;
+  --progress-circle-border: 15px;
+}
+
+.progress-circle {
+  width: var(--progress-circle-size);
+  height: var(--progress-circle-size);
   position: relative;
   display: flex;
   justify-content: center;
@@ -47,8 +85,8 @@ export default Vue.extend({
     background: white;
     left: 50%;
     top: 50%;
-    width: calc(100% - #{$pie-chart-border});
-    height: calc(100% - #{$pie-chart-border});
+    width: calc(100% - var(--progress-circle-border));
+    height: calc(100% - var(--progress-circle-border));
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
