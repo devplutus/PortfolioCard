@@ -1,5 +1,5 @@
 <template>
-  <div class="progress-bar-form">
+  <div class="language-form">
     <ProgressBar
       ref="progressBars"
       v-for="info in languageInfos"
@@ -43,7 +43,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.progress-bar-form {
+.language-form {
   padding: 30px 30px 0 30px;
   flex-wrap: wrap;
 }
