@@ -45,6 +45,5 @@ export default Vue.extend({
 <style lang="scss">
 .language-form {
   padding: 30px 30px 0 30px;
-  flex-wrap: wrap;
 }
 </style>
