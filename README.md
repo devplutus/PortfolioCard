@@ -1,5 +1,8 @@
-# portfoliocard
+# Portfolio
 
+## URL
+> http://devplutus-portfolio.s3-website.ap-northeast-2.amazonaws.com/
+  
 ## Project setup
 ```
 yarn install
@@ -19,6 +22,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
