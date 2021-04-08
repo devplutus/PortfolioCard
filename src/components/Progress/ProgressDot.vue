@@ -52,14 +52,14 @@ export default Vue.extend({
 .progress-dot {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
   margin-bottom: 20px;
   .dot {
     border-radius: 50%;
     background: #eaeaea;
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     overflow: hidden;
     .fill {
       width: 0%;
