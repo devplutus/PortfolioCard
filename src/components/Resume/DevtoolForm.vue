@@ -1,9 +1,21 @@
 <template>
-  <div ref="devtoolForm" class="devtool-form"></div>
+  <div class="devtool-form">
+    <ProgressDot
+      ref="devtoolForm"
+      v-for="info in devtoolInfos"
+      :key="info.title"
+      :title="info.title"
+      :value="info.value"
+    />
+  </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import ProgressDot from "@/components/Progress/ProgressDot.vue";
 export default Vue.extend({
+  components: {
+    ProgressDot,
+  },
   data() {
     return {
       devtoolInfos: [
@@ -14,6 +26,15 @@ export default Vue.extend({
         { title: "Adobe XD", value: 70 },
       ],
     };
+  },
+  methods: {
+    startAnimation() {
+      const devtoolForm = this.$refs.devtoolForm as HTMLDivElement[];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      devtoolForm.forEach((chart: any) => {
+        chart.animate();
+      });
+    },
   },
 });
 </script>

@@ -49,6 +49,7 @@
         <!-- DEV TOOL -->
         <template slot="left">
           <ContentSubTitle title="DEV TOOL" icon="screwdriver" />
+          <DevtoolForm ref="devtoolForm" />
         </template>
         <!-- KNOWLEDGE -->
         <template slot="right">
@@ -69,6 +70,7 @@ import ContentSubTitle from "@/components/Common/ContentSubTitle.vue";
 import ResumeForm from "@/components/Resume/ResumeForm.vue";
 import CodingForm from "@/components/Resume/CodingForm.vue";
 import LanguageForm from "@/components/Resume/LanguageForm.vue";
+import DevtoolForm from "@/components/Resume/DevtoolForm.vue";
 
 import Vue from "vue";
 
@@ -80,6 +82,7 @@ export default Vue.extend({
     ResumeForm,
     CodingForm,
     LanguageForm,
+    DevtoolForm,
   },
   data() {
     return {
@@ -150,6 +153,7 @@ export default Vue.extend({
       if (subTop <= mainBottom) {
         (this.$refs.codingForm as any).startAnimation();
         (this.$refs.languageForm as any).startAnimation();
+        (this.$refs.devtoolForm as any).startAnimation();
         resume.removeEventListener("scroll", this.checkVisible);
       }
     },

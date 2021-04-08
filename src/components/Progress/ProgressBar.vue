@@ -14,18 +14,20 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
-    title: String,
-    thickness: {
-      type: Number,
+    title: {
+      type: String,
       required: true,
     },
+    thickness: Number,
   },
   mounted() {
     const progressBar = this.$refs.progressBar as HTMLDivElement;
-    progressBar.style.setProperty(
-      "--progress-bar-thickness",
-      `${this.thickness}px`
-    );
+    if (this.thickness) {
+      progressBar.style.setProperty(
+        "--progress-bar-thickness",
+        `${this.thickness}px`
+      );
+    }
     progressBar.style.setProperty("--progress-bar-width", `${this.value}%`);
   },
   methods: {
