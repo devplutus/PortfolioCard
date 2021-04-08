@@ -19,7 +19,8 @@ export default Vue.extend({
   data() {
     return {
       devtoolInfos: [
-        { title: "Microsoft Azure", value: 70 },
+        { title: "Git", value: 70 },
+        { title: "Microsoft Azure", value: 60 },
         { title: "Notion", value: 100 },
         { title: "MS Office", value: 80 },
         { title: "Adobe Photoshop", value: 70 },

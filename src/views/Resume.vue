@@ -54,6 +54,7 @@
         <!-- KNOWLEDGE -->
         <template slot="right">
           <ContentSubTitle title="KNOWLEDGE" icon="lightbulb" prefix="far" />
+          <KnowledgeForm ref="knowledgeForm" />
         </template>
       </ContentBody>
     </div>
@@ -71,6 +72,7 @@ import ResumeForm from "@/components/Resume/ResumeForm.vue";
 import CodingForm from "@/components/Resume/CodingForm.vue";
 import LanguageForm from "@/components/Resume/LanguageForm.vue";
 import DevtoolForm from "@/components/Resume/DevtoolForm.vue";
+import KnowledgeForm from "@/components/Resume/KnowledgeForm.vue";
 
 import Vue from "vue";
 
@@ -83,6 +85,7 @@ export default Vue.extend({
     CodingForm,
     LanguageForm,
     DevtoolForm,
+    KnowledgeForm,
   },
   data() {
     return {

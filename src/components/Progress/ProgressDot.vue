@@ -54,7 +54,7 @@ export default Vue.extend({
   display: flex;
   justify-content: space-around;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   .dot {
     border-radius: 50%;
     background: #eaeaea;
