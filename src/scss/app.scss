@@ -13,6 +13,7 @@ body {
   align-items: center;
   overflow: hidden;
   color: $text-color;
+  user-select: none;
 }
 .container,
 .container-sub {
