@@ -5,7 +5,9 @@
       <ContentTitle title="Portfolio" />
       <ContentBody :col="1">
         <template slot="center">
-          <TagList :tagList="tagList" />
+          <div class="tagList">
+            <TagList :tagList="tagList" />
+          </div>
           <PortfolioList />
         </template>
       </ContentBody>
@@ -47,4 +49,11 @@ export default Vue.extend({
 });
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.tagList {
+  display: block;
+  width: 100%;
+  height: 60px;
+  text-align: right;
+}
+</style>

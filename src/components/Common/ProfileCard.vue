@@ -26,7 +26,7 @@ export default Vue.extend({
       TYPING_WAIT: 6000,
       /* Variables */
       currentIcons: [],
-      jobs: ["Programmer", "Front-End Developer", "Back-End Developer"],
+      jobs: ["Programmer", "Front-End", "Back-End"],
       icons: [
         [
           "javascript-plain",
