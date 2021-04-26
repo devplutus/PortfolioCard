@@ -41,12 +41,6 @@ export default Vue.extend({
           type: "Web",
           keywords: ["C#", "Company"],
         },
-        {
-          title: "Generation Bridge",
-          type: "Mobile",
-          img: require("../../assets/portfolio/mrbot.png"),
-          keywords: ["Flutter", "Personal"],
-        },
       ],
     };
   },
