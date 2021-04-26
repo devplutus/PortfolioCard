@@ -1,7 +1,7 @@
 <template>
   <div ref="resume">
     <!-- Resume -->
-    <div class="content">
+    <div class="content" style="overflow-x: hidden">
       <ContentTitle title="Portfolio" />
       <ContentBody :col="1">
         <template slot="center">
