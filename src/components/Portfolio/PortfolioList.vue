@@ -31,7 +31,7 @@ export default Vue.extend({
       portfolio: [
         {
           title: "Prescription Management Solution",
-          img: require("../../assets/portfolio/mrbot.png"),
+          img: require("../../assets/portfolio/MrBot.png"),
           type: "Web",
           keywords: ["C#", "Company"],
         },
