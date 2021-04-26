@@ -31,20 +31,20 @@ export default Vue.extend({
       portfolio: [
         {
           title: "Prescription Management Solution",
-          img: require("/src/assets/portfolio/mrbot.png"),
+          img: require("../../assets/portfolio/mrbot.png"),
           type: "Web",
           keywords: ["C#", "Company"],
         },
         {
           title: "Scholarship Management System",
-          img: require("/src/assets/portfolio/mirae.png"),
+          img: require("../../assets/portfolio/mirae.png"),
           type: "Web",
           keywords: ["C#", "Company"],
         },
         {
           title: "Generation Bridge",
           type: "Mobile",
-          img: require("/src/assets/portfolio/mrbot.png"),
+          img: require("../../assets/portfolio/mrbot.png"),
           keywords: ["Flutter", "Personal"],
         },
       ],
